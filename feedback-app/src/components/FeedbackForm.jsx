@@ -33,6 +33,7 @@ function FeedbackForm({ handleAdd }) {
         rating
       }
       
+      console.log(newFeedback)
       handleAdd(newFeedback)
 
       setText('')
@@ -43,24 +44,25 @@ function FeedbackForm({ handleAdd }) {
     <Card>
       <form onSubmit={handleSubmit}>
         <h2>How do you rate our service?</h2>
-        <RatingSelect select={setRating} selected={rating}/>
-      </form>
+        <RatingSelect select={setRating} selected={rating} />
       <div className="input-group">
         <input 
           onChange={handleTextChange}
           type="text" 
           placeholder='Write a Review' 
           value={text}
-        />
+          />
         <Button 
           type='submit'
           isDisabled={btnDisabled}
-        >
+          >
           SEND
         </Button>
       </div>
-
         {message && <div className='message'>{message}</div>}
+          </form>
+
+
     </Card>
   )
 }

@@ -1,11 +1,8 @@
-import { useState } from 'react'
+function RatingSelect({ select, selected }) {
 
-function RatingSelect(select, selected ) {
-  // const [selected, setSelected] = useState(10)
-
-  // const handleChange = (e) => {
-  //   select(+e.currentTarget.value)
-  // }
+  const handleChange = (e) => {
+    select(+e.currentTarget.value)
+  }
 
   return (
     <ul className='rating'>
@@ -16,7 +13,7 @@ function RatingSelect(select, selected ) {
           id={`num${i + 1}`}
           name='rating'
           value={i + 1}
-          // onChange={handleChange}
+          onChange={handleChange}
           checked={selected === i + 1}
         />
         <label htmlFor={`num${i + 1}`}>{i + 1}</label>
